@@ -1,0 +1,38 @@
+<aura:component access="global">
+    <aura:attribute name="DebtInstance" type="Object"/>
+    <aura:attribute name="rowIndex" type="String"/>
+    <aura:attribute name="selectedRowsCount" type="Integer"  />
+    <aura:attribute name="selectedRowsSum" type="Decimal"/>
+    
+    <aura:registerEvent name="DeleteDebtEvent" type="c:DeleteDebtEvent"/> 
+    <aura:registerEvent name="AddDebtEvent" type="c:AddDebtEvent"/> 
+    
+    <!-- Table Row -->   
+    <tr class="slds-text-title_caps">
+        <td>
+            <ui:inputCheckbox value ="{!v.DebtInstance.selectedVal}" change="{!c.updateSelectedText}"/>
+        </td>
+        <td>
+        	<lightning:button variant="neutral" label="Add" title="Add" onclick="{! c.addDebt }" />
+        </td>
+        <td>
+            <lightning:button variant="neutral" label="Remove" title="Remove" onclick="{! c.removeDebt }" />
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.DebtInstance.creditorName}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.DebtInstance.firstName}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.DebtInstance.lastName}"/>
+        </td>
+        <td>
+            <ui:inputNumber class="slds-input" value="{!v.DebtInstance.minPaymentPercentage}"/>
+        </td>
+        <td>
+        	<ui:inputCurrency class="slds-input" value="{!v.DebtInstance.balance}" />
+        </td>
+    </tr>
+	
+</aura:component>

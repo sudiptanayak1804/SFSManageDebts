@@ -25,18 +25,8 @@
         <name>ConnectedApp</name>
     </types>
     <types>
-        <members>clientlogosmdhhs</members>
-        <name>ContentAsset</name>
-    </types>
-    <types>
         <members>*</members>
         <name>CustomLabel</name>
-    </types>
-    <types>
-        <members>Isolation_Hotel</members>
-        <members>Michigan_Mandated_Reporter</members>
-        <members>Volunteer_Management</members>
-        <name>CustomApplication</name>
     </types>
     <types>
         <members>*</members>
@@ -52,31 +42,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>CustomObjectTranslation</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>CustomTab</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>FieldSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>FlexiPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Flow</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>GlobalValueSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>GlobalValueSetTranslation</name>
     </types>
     <types>
         <members>*</members>
@@ -88,67 +54,11 @@
     </types>
     <types>
         <members>*</members>
-        <name>Network</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>PermissionSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>PlatformCachePartition</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>Profile</name>
     </types>
     <types>
         <members>*</members>
-        <name>ProfilePasswordPolicy</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ProfileSessionSetting</name>
-    </types>
-    <types>
-        <members>Antigen_Admin</members>
-        <name>Role</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SharingCriteriaRule</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SharingOwnerRule</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SharingGuestRule</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SharingSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SiteDotCom</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>StaticResource</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Translations</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>WebLink</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Workflow</name>
     </types>
     <version>50.0</version>
 </Package>

@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Event to remove Debt" >
+    <aura:attribute name="indexVar" type="Integer" />
+</aura:event>

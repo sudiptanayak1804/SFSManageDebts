@@ -1,0 +1,87 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="GetSFSMasterData">
+
+    <!-- attributes -->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="100"/>
+    <aura:attribute name="totalRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="totalBalance" type="Integer" default="0"/>
+    <aura:attribute name="selectedRowsSum" type="Decimal" default="0"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <aura:handler name="DeleteDebtEvent" event="c:DeleteDebtEvent" action="{!c.removeDebt}"/>
+    <aura:handler name="AddDebtEvent" event="c:AddDebtEvent" action="{!c.addDebt}"/>
+    
+    
+    <!--The Debt Table -->  
+    <lightning:layout >
+        <lightning:layoutItem class="around-small " size="12">
+                     
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer"> 
+                <thead>
+                    <tr class="slds-text-title">
+                        <th>
+                            <ui:inputCheckbox change="{!c.selectAll}"/>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-text-align_center" title="Add">Add</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-text-align_center" title="Remove">Remove</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Creditor">Creditor</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="First Name">First Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Last Name">Last Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Min Pay">Min Pay %</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Balance">Balance</div>
+                        </th>
+                    </tr>
+                </thead>   
+                <tbody>     
+                    <aura:iteration items="{!v.data}" var="item" indexVar="index">
+                        <c:DebtRow DebtInstance="{!item}" rowIndex="{!index}" selectedRowsCount="{!v.selectedRowsCount}" selectedRowsSum="{!v.selectedRowsSum}"/>
+                    </aura:iteration>
+                </tbody>
+            </table>
+            <br/>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+    <!--The Add Debt and Remove Debt Button -->  
+    <lightning:layout >
+        <lightning:layoutItem class="around-small padding-top: 2rem " size="2" >
+        	<lightning:button variant="brand" label="Add Debt" title="Add Debt" onclick="{! c.saveDebt }" />
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+    <!--The Calculated Total Debt and Row section -->  
+    <lightning:layout >
+        <lightning:layoutItem class="around-small slds-text-align_left total-amount" padding="horizontal-medium" size="6">
+            <strong>Total </strong> 
+        </lightning:layoutItem>
+        <lightning:layoutItem class="around-small slds-text-align_right total-amount" padding="horizontal-medium" size="6">
+            <strong>  {! v.selectedRowsSum }</strong> 
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+    <!--The Add Debt and Remove Debt Button -->  
+    <lightning:layout class="{background-color: white;}">
+        <lightning:layoutItem class="around-small " padding="horizontal-medium" size="3">
+            <strong>Total Row Count: {! v.totalRowsCount }</strong> 
+        </lightning:layoutItem>
+        <lightning:layoutItem class="around-small " padding="horizontal-medium" size="3" >  
+            <strong>Check Row Count: {! v.selectedRowsCount }</strong>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event fired when a debt row is selected" >
+	<aura:attribute name="rowIndex" type="Integer"/>
+    <aura:attribute name="checkboxState" type="Boolean"/>
+</aura:event>
